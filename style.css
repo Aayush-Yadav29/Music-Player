@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
+body{
+    /* background-color: antiquewhite; */
+    /* background-image: linear-gradient(to bottom right, rgb(226, 209, 209), rgb(60, 60, 56)); */
+    background-image: url('https://wallpapers.com/images/hd/girl-with-black-headphone-a09f6yk2y3h937yo.jpg');
+    /* background-color: black; */
+    background-attachment: fixed;   
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: 1000px 1000px; */
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.headline{
+    font-family: 'Kumbh Sans', sans-serif;
+    margin-bottom: 6px; 
+    font-size: 22px;
+}
+nav img{
+    width: 65px;
+}
+.sign{
+    margin-left: 77%;
+    margin-right: 5%;
+}
+.headline{
+    margin-left: 2px;
+}
+
+.main{
+    height:100vh;
+    font-family: 'Poppins', sans-serif;
+}
+.main a{
+    border: solid white 1px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin-top: 5%;
+    margin-left: 10%;
+    font-size: 40px;
+    border-radius: 18px;
+    width: 170px;
+    height: 90px;
+    padding-top: 45px;
+    text-align: center; 
+}
+.main a:hover{
+    background-image: linear-gradient(to bottom, rgb(68, 187, 47), rgb(5, 49, 4));
+    /* border: black; */
+    box-shadow: 0.4px 1px 1px 0.4px white;
+}
+.lang{
+    border: solid white 2pxss;
+
+}
+
+/* Tagline */
+section > div {
+    display: inline-block;
+    text-align: left;
+    height: 30px;
+    line-height: 30px;
+  
+    overflow: hidden;
+}
+.tagline_1{
+    color: white;
+}
+.tagline{
+    font-family: 'Red Hat Display', sans-serif;
+    margin-top: 3%;
+    margin-left: 10%;
+    font-size: 50px;
+}
+section > div {
+    display: inline-block;
+    text-align: left;
+    height: 55px;
+    line-height: 50px;
+  
+    overflow: hidden;
+  }  
+  
+  /* solution */
+  div.word-list span {
+    display: block;
+  }
+  div.word-list {
+      position: relative;
+      animation: cycle ease 5s infinite;
+    }
+    
+    @keyframes cycle {
+      0% { top: 0; }
+      25% { top: 0; }
+      35% { top: -50px; }
+      65% { top: -50px; }
+      75% { top: 0; }
+      100% { top: 0; }
+    }
+  
+  /* colors */
+  span:nth-child(1) {
+    color:#72ff7a;
+  }
+  span:nth-child(2) {
+    color:#72ff7a;
+  }
+  
+  
+  
+.que{
+    color: white;
+    padding-left: 4px;
+    margin-left: 4px;
+    font-size: 30px;
+    margin-top: 7%;
+    margin-left: 10%;
+}
+.english{
+    padding-top: 10%;
+    padding-left: 4%;
+    height: 100vh;
+}
+
+.hindi{
+    padding-top: 10%;
+    padding-left: 4%;
+    height: 100vh;
+}
+.items{
+    display: inline-block;
+    padding-left: 0.2%;
+    margin-bottom: 0.5%;
+    padding-right: 1%;
+    border: 4px white;
+    border-radius: 30px;
+    background-color: white;
+    height: 57px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 50%;
+    margin-left: 24px;
+}
+
+.items img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+.title{
+    text-align: center;
+    width: 30%;
+
+}
+.seekbar{
+    padding: 4px 4px;
+    display: flex;
+    position: fixed;
+    height: 9%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+}
+.playPause{
+    width: 60%;
+}
+/*styling the seekbar*/
+#myProgBar{
+    margin-top: 6px;
+    padding-bottom: 4px;
+    width: 100%;
+    cursor: pointer;
+    /* Customize the track color */
+    --track-color: #d62020;
+    --thumb-color: #0dc839; /* Customize the thumb color */
+}
+
+.bigPlayBtn{
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.smallPlayBtn{
+    cursor: pointer;
+}
+.next{
+    cursor: pointer;
+}
+.timer{
+    color: white;
+    padding-top: 32px;
+}
+#startTimer{
+    margin-right: 1%;
+}
+#totalDuration{
+    margin-left: 1%;
+}

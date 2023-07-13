@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/2048px-Spotify_App_Logo.svg.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="logo"><img src="img/logo.png" alt=""></li>
+            <li class="headline">Spotify</li>
+            <li class="sign">Sign Up</li>
+            <li class="login">Log in</li>
+        </ul>
+    </nav>
+
+    <!-- Tagline -->
+    <section class="tagline">
+        <div class="tagline_1">Listen Songs Any</div>
+        <div>
+          <div class="word-list">
+            <span>time</span>
+            <span>where</span>
+          </div>
+        </div>
+    </section>
+
+    <div class="main">
+        <div class="que"><h2>What do you wanna go with ?</h2></div>
+        <a href="#eng">
+            <div class="lang">
+                English
+            </div>
+        </a>
+        <a href="#hin">
+            <div class="lang">
+                Hindi
+            </div>
+        </a>
+
+    </div>
+
+    <!-- English Songs -->
+    <section class="english" id="eng">
+        <div class="items">
+            <img src="img/ec-1.jpg" alt=""> 
+            <div class="title">Love Me Like Yo Do</div> 
+            <div>4:13</div>
+            <i id="1" class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+        <div class="items">
+            <img src="img/ec-2.jpg" alt=""> 
+            <div class="title">Believer</div> 
+            <div>3:37</div>
+            <i id="2" class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+        <div class="items">
+            <img src="img/ec-3.jpg" alt=""> 
+            <div class="title">Hall of Fame</div> 
+            <div>3:22</div>
+            <i id="3" class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+        <div class="items">
+            <img src="img/ec-4.jpg" alt=""> 
+            <div class="title">Shape Of You</div> 
+            <div>3:53</div>
+            <i id="4" class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+        <div class="items">
+            <img src="img/ec-5.jpg" alt=""> 
+            <div class="title">Pirates of the Caribbean</div> 
+            <div>7:08</div>
+            <i id="5" class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+        <div class="items">
+            <img src="img/ec-2.jpg" alt=""> 
+            <div class="title">Still Falling For You</div> 
+            <div>4:01</div>
+            <i id="6" class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+    </section>
+
+    <!-- Hindi Songs -->
+    <div class="hindi" id="hin">
+        <div class="items">
+            <img src="img/hc-1.jpg" alt=""> 
+            <div class="title">Brothers Anthem</div> 
+            <div class = "duration">5:54</div>
+            <i class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+        <div class="items">
+            <img src="img/hc-2.jpg" alt=""> 
+            <div class="title">Kar Har Maidan Fateh</div> 
+            <div class = "duration">5:12</div>
+            <i class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+        <div class="items">
+            <img src="img/hc-3.jpg" alt=""> 
+            <div class="title">Chak Lein De</div> 
+            <div class = "duration">4:23</div>
+            <i class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+        <div class="items">
+            <img src="img/hc-4.webp " alt=""> 
+            <div class="title">Chak De India</div> 
+            <div class = "duration">4:44</div>
+            <i class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+        <div class="items">
+            <img src="img/hc-5.jpg" alt=""> 
+            <div class="title">Zinda</div> 
+            <div class = "duration">3:31</div>
+            <i class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+        <div class="items">
+            <img src="img/hc-6.jpg" alt=""> 
+            <div class="title">Get Ready To Fight</div> 
+            <div class = "duration">3:25</div>
+            <i class="smallPlayBtn far fa-2x fa-play-circle"></i>
+        </div>
+    </div>
+
+    <!-- Bottom seek bar -->
+    <div class="seekbar">
+        <!-- <div class="currSongLogo">a</div>
+        <div class="currSongName">b</div>
+        <div class="favourite">c</div> -->
+        <div class="timer" id="startTimer">0:00</div>
+        <div class="playPause">
+            <i id = "back" class="next backward fas fa-2x fa-step-backward" style="color:white;"></i>
+            <i  class="bigPlayBtn far fa-2x fa-play-circle" style="color:white;" id = "centerPlayBtn"></i>
+            <i id = "upnext" class="next upnext fas fa-2x fa-step-forward" style="color:white;"></i>
+            <input type="range" name="range" id="myProgBar" value = "0" min="0" max="100">
+        </div>
+        <div class="timer" id="totalDuration">4:13</div>
+        <!-- <div class="volume">d</div> -->
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
