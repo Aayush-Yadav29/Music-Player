@@ -220,3 +220,11 @@ section > div {
 #totalDuration{
     margin-left: 1%;
 }
+.icon-large {
+    cursor: pointer;
+    margin-right: 3%;
+    font-size: 25px; /* Adjust the size as needed */
+}
+.green-color {
+  color: rgb(90, 202, 90) !important; /* Apply the green color */
+}   

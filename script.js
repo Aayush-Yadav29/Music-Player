@@ -12,30 +12,56 @@ let myProgressBar = document.getElementById("myProgBar");
 
 let songs = [
     {songName: "Love Me Like Yo Do", filePath: "songs/1.mp3", coverPath: "img/ec-1.jpgs", duration: "4:13"},
-    {songName: "Love Me Like Yo Do", filePath: "songs/2.mp3", coverPath: "img/ec-2.jpgs", duration: "3:37"},
-    {songName: "Love Me Like Yo Do", filePath: "songs/3.mp3", coverPath: "img/ec-3.jpgs", duration: "3:22"},
-    {songName: "Love Me Like Yo Do", filePath: "songs/4.mp3", coverPath: "img/ec-4.jpgs", duration: "3:53"},
-    {songName: "Love Me Like Yo Do", filePath: "songs/5.mp3", coverPath: "img/ec-5.jpgs", duration: "7:08"},
-    {songName: "Love Me Like Yo Do", filePath: "songs/6.mp3", coverPath: "img/ec-6.jpgs", duration: "4:01"},
+    {songName: "Believer", filePath: "songs/2.mp3", coverPath: "img/ec-2.jpgs", duration: "3:37"},
+    {songName: "Hall of Fame", filePath: "songs/3.mp3", coverPath: "img/ec-3.jpgs", duration: "3:22"},
+    {songName: "Shape Of You", filePath: "songs/4.mp3", coverPath: "img/ec-4.jpgs", duration: "3:53"},
+    {songName: "Pirates of the Caribbean", filePath: "songs/5.mp3", coverPath: "img/ec-5.jpgs", duration: "7:08"},
+    {songName: "Still Falling For You", filePath: "songs/6.mp3", coverPath: "img/ec-6.jpgs", duration: "4:01"},
 ]
 
-//handling play/pause of songs
+// handling shuffling of songs
+let shuffleMode = false;
+console.log('shuffle: ', shuffleMode);
+
+const Shflbtn = document.getElementById('shuffleBtn');
+Shflbtn.addEventListener('click', () => {
+    shuffleMode = !shuffleMode;
+    if (shuffleMode) {
+        Shflbtn.classList.add('green-color');
+    } else {
+        Shflbtn.classList.remove('green-color');
+    }
+    console.log('shuffle: ', shuffleMode);
+
+    // Update the appearance of the shuffle button based on the shuffle mode
+    const shuffleBtn = document.getElementById('shuffleBtn');
+    shuffleBtn.classList.toggle('active', shuffleMode);
+});
+
+
+
+// Handling play/pause of songs
 centerPlayBtn.addEventListener('click', function() {
-    if(audioElement.paused || audioElement.currentTime<=0){
-        // play the song
+    if (audioElement.paused || audioElement.currentTime <= 0) {
+        // Play the song
+        if (shuffleMode) {
+            let randomNumber = Math.floor(Math.random() * 6) + 1;
+            console.log(randomNumber);
+            audioElement = new Audio(`songs/${randomNumber}.mp3`);
+        }
         audioElement.play();
-        // change the icon to pause icon
+        // Change the icon to pause icon
         centerPlayBtn.classList.remove('fa-play-circle');
         centerPlayBtn.classList.add('fa-pause-circle');
-    }
-    else{
-        // song is playing and i need to pause it
+    } else {
+        // Song is playing and I need to pause it
         audioElement.pause();
-        // change the icon back to pause icon
+        // Change the icon back to play icon
         centerPlayBtn.classList.remove('fa-pause-circle');
         centerPlayBtn.classList.add('fa-play-circle');
     }
 });
+
 
 // Updating the seekbar
 //listen to the audioElement
@@ -118,6 +144,14 @@ Array.from(document.getElementsByClassName('smallPlayBtn')).forEach((element) =>
 // implementing next button
 let totalSongs = 6;
 document.getElementById('upnext').addEventListener('click', ()=>{
+    if(audioElement.currentTime > 0){
+        audioElement.pause();
+    }
+    if (shuffleMode) {
+        let randomNumber = Math.floor(Math.random() * 6) + 1;
+        console.log(randomNumber);
+        audioElement = new Audio(`songs/${randomNumber}.mp3`);
+    }
     if(songIndex >= totalSongs){
         songIndex = 1;
     }
