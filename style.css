@@ -4,7 +4,7 @@
 body{
     /* background-color: antiquewhite; */
     /* background-image: linear-gradient(to bottom right, rgb(226, 209, 209), rgb(60, 60, 56)); */
-    background-image: url('https://wallpapers.com/images/hd/girl-with-black-headphone-a09f6yk2y3h937yo.jpg');
+    background-image: url('https://wallpaperaccess.com/full/1162633.jpg');
     /* background-color: black; */
     background-attachment: fixed;   
     background-position: center;
@@ -31,19 +31,21 @@ nav ul{
 .headline{
     font-family: 'Kumbh Sans', sans-serif;
     margin-bottom: 6px; 
-    font-size: 22px;
+    font-size: 20px;
 }
 nav img{
     width: 65px;
 }
 .sign{
-    margin-left: 77%;
+    margin-left: 70%;
     margin-right: 5%;
 }
 .headline{
     margin-left: 2px;
 }
-
+.logo{
+    width: 100px;
+}
 .main{
     height:100vh;
     font-family: 'Poppins', sans-serif;
