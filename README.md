@@ -1,6 +1,6 @@
-# Spotify Clone
+# Music Player
 
-This project is a clone of the popular music streaming service Spotify. It is built using HTML, CSS, and JavaScript, and aims to replicate the basic functionalities of the original Spotify website. The clone includes two sections for English and Hindi songs, and allows users to play, pause, skip to the next or previous song, and switch between the English and Hindi sections.
+This project is a music website which aims to replicate the basic functionalities of the any online music streaming website. It is built using HTML, CSS, and JavaScript. The website includes two sections for English and Hindi songs, and allows users to play, pause, skip to the next or previous song, and switch between the English and Hindi sections.
 
 ## Features
 
@@ -12,6 +12,7 @@ This project is a clone of the popular music streaming service Spotify. It is bu
 
 4. **Progress Bar**: The clone displays a progress bar for the currently playing song, showing the elapsed time and the remaining time. This feature allows users to track their progress within the song. User can navigate to any point in song by dragging the progress bar.
 
+5. **Shuffle**: The clone features a shuffle button that can be toggled on or off by clicking on it. When the shuffle mode is enabled, the clone implements the shuffle feature by playing a random song up next from the playlist.
 
 
 ## Project Structure
