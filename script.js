@@ -17,9 +17,16 @@ let songs = [
     {songName: "Shape Of You", filePath: "songs/4.mp3", coverPath: "img/ec-4.jpgs", duration: "3:53"},
     {songName: "Pirates of the Caribbean", filePath: "songs/5.mp3", coverPath: "img/ec-5.jpgs", duration: "7:08"},
     {songName: "Still Falling For You", filePath: "songs/6.mp3", coverPath: "img/ec-6.jpgs", duration: "4:01"},
+    {songName: "Brothers Anthem", filePath: "songs/7.mp3", coverPath: "img/hc-1.jpgs", duration: "5:54"},
+    {songName: "Kar Har Maidan Fateh", filePath: "songs/8.mp3", coverPath: "img/hc-2.jpgs", duration: "5:12"},
+    {songName: "Chak Lein De", filePath: "songs/9.mp3", coverPath: "img/hc-3.jpgs", duration: "4:23"},
+    {songName: "Chak De India", filePath: "songs/10.mp3", coverPath: "img/hc-4.jpgs", duration: "4:44"},
+    {songName: "Zinda", filePath: "songs/11.mp3", coverPath: "img/hc-5.jpgs", duration: "3:31"},
+    {songName: "Get Ready To Fight", filePath: "songs/12.mp3", coverPath: "img/hc-6.jpgs", duration: "3:25"},
+    
 ]
 
-// handling shuffling of songs
+// handling shuffling of songs.
 let shuffleMode = false;
 console.log('shuffle: ', shuffleMode);
 
@@ -45,7 +52,7 @@ centerPlayBtn.addEventListener('click', function() {
     if (audioElement.paused || audioElement.currentTime <= 0) {
         // Play the song
         if (shuffleMode) {
-            let randomNumber = Math.floor(Math.random() * 6) + 1;
+            let randomNumber = Math.floor(Math.random() * 12) + 1;
             console.log(randomNumber);
             audioElement = new Audio(`songs/${randomNumber}.mp3`);
         }
@@ -142,31 +149,40 @@ Array.from(document.getElementsByClassName('smallPlayBtn')).forEach((element) =>
 
 
 // implementing next button
-let totalSongs = 6;
-document.getElementById('upnext').addEventListener('click', ()=>{
-    if(audioElement.currentTime > 0){
-        audioElement.pause();
+let totalSongs = 12;
+document.getElementById('upnext').addEventListener('click', () => {
+    if (audioElement.currentTime > 0) {
+      audioElement.pause();
     }
+  
     if (shuffleMode) {
-        let randomNumber = Math.floor(Math.random() * 6) + 1;
-        console.log(randomNumber);
-        audioElement = new Audio(`songs/${randomNumber}.mp3`);
-    }
-    if(songIndex >= totalSongs){
+      let randomNumber = Math.floor(Math.random() * totalSongs) + 1;
+      // Make sure the next random number is not the same as the current song index
+      while (randomNumber === songIndex) {
+        randomNumber = Math.floor(Math.random() * totalSongs) + 1;
+      }
+      console.log(randomNumber);
+      audioElement = new Audio(`songs/${randomNumber}.mp3`);
+      songIndex = randomNumber;
+    } else {
+      if (songIndex >= totalSongs) {
         songIndex = 1;
-    }
-    else{
+      } else {
         songIndex++;
+      }
+      // If shuffle mode is disabled, simply increment the song index
+      audioElement.src = `songs/${songIndex}.mp3`;
     }
+  
     makeAllPlays();
-    total_durn.innerHTML = songs[songIndex-1].duration;
-    audioElement.src = `songs/${songIndex}.mp3`;
+    total_durn.innerHTML = songs[songIndex - 1].duration;
     audioElement.currentTime = 0;
     audioElement.play();
     myProgressBar.value = 0;
     centerPlayBtn.classList.remove('fa-play-circle');
     centerPlayBtn.classList.add('fa-pause-circle');
-})
+  });
+  
 
 // implementing back button
 document.getElementById('back').addEventListener('click', ()=>{
